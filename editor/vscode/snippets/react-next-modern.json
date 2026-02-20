@@ -1,0 +1,117 @@
+{
+  "Next.js Server Component": {
+    "prefix": "nsc",
+    "body": [
+      "type ${1:Props} = {};",
+      "",
+      "export async function ${2:ComponentName}({}: ${1:Props}) {",
+      "  return (",
+      "    <div>",
+      "      ${3:content}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js Server Component (App Router, default)"
+  },
+
+  "Next.js Client Component": {
+    "prefix": "ncc",
+    "body": [
+      "\"use client\";",
+      "",
+      "type ${1:Props} = {};",
+      "",
+      "export function ${2:ComponentName}({}: ${1:Props}) {",
+      "  return (",
+      "    <div>",
+      "      ${3:content}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js Client Component (Needs state, effects, or browser APIs)"
+  },
+
+  "Next.js Page": {
+    "prefix": "npage",
+    "body": [
+      "export default function ${1:Page}() {",
+      "  return (",
+      "    <main>",
+      "      ${2:content}",
+      "    </main>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js page.tsx"
+  },
+
+  "Next.js Layout": {
+    "prefix": "nlayout",
+    "body": [
+      "type Props = {",
+      "  children: React.ReactNode;",
+      "};",
+      "",
+      "export default function ${1:Layout}({ children }: Props) {",
+      "  return (",
+      "    <div>",
+      "      {children}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js layout.tsx"
+  },
+
+  "React Function Component": {
+    "prefix": "rfc",
+    "body": [
+      "type ${1:Props} = {};",
+      "",
+      "export function ${2:ComponentName}({}: ${1:Props}) {",
+      "  return (",
+      "    <div>",
+      "      ${3:content}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React function component (named export)"
+  },
+
+  "React useState Component": {
+    "prefix": "rfcs",
+    "body": [
+      "import { useState } from \"react\";",
+      "",
+      "type ${1:Props} = {};",
+      "",
+      "export function ${2:ComponentName}({}: ${1:Props}) {",
+      "  const [${3:value}, set${3/(.*)/${1:/capitalize}/}] = useState(${4:null});",
+      "",
+      "  return (",
+      "    <div>",
+      "      ${5:content}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React component with useState"
+  },
+
+  "React Custom Hook": {
+    "prefix": "rhook",
+    "body": [
+      "export function use${1:Name}() {",
+      "  ${2:// hook logic}",
+      "",
+      "  return {",
+      "    ${3}",
+      "  };",
+      "}"
+    ],
+    "description": "Custom React hook"
+  }
+}

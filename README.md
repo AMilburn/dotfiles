@@ -51,7 +51,7 @@ A plain-text list of VS Code extensions
 ---
 
 ### `setup-vscode.sh`
-Installs VS Code extensions listed in `extensions.txt` and copies any snippet files from `vscode/snippets/` to global VS Code snippets directory (`~/Library/Application Support/Code/User/snippets`). Existing snippets are not overwritten.
+Installs VS Code extensions listed in `extensions.txt` and copies any `.json` snippet files from `editor/vscode/snippets/` into the global VS Code snippets directory (`~/Library/Application Support/Code/User/snippets`). If the snippet file already exists in the user's snippets directory (for example, defaults), the script will prompt before overwriting so you can choose to preserve or replace existing snippets.
 
 Safe to run on:
 - A new machine

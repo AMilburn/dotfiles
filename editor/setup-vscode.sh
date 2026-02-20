@@ -44,11 +44,24 @@ for snippet_file in "$SNIPPETS_SRC"/*.json; do
     # Skip if no .json files exist
     [[ -e "$snippet_file" ]] || continue
 
+    snippet_basename=$(basename "$snippet_file")
     snippet_name=$(basename "$snippet_file" .json)
-    target_file="$SNIPPETS_DIR/$(basename "$snippet_file")"
+    target_file="$SNIPPETS_DIR/$snippet_basename"
 
     if [[ -e "$target_file" ]]; then
-        echo "⚠ Snippet '$snippet_name' already exists in VS Code. Skipping copy."
+        # Always prompt before overwriting the user's existing typescriptreact.json
+        if [[ "$snippet_basename" == "typescriptreact.json" ]]; then
+            echo "⚠ Snippet 'typescriptreact.json' already exists in VS Code."
+            read -p "Do you want to overwrite typescriptreact.json with your personal snippet? [y/N]: " overwrite
+            if [[ "$overwrite" =~ ^[Yy]$ ]]; then
+                cp "$snippet_file" "$target_file"
+                echo "✅ Overwrote snippet '$snippet_name' in VS Code."
+            else
+                echo "⚠ Skipping overwrite of '$snippet_name'."
+            fi
+        else
+            echo "⚠ Snippet '$snippet_name' already exists in VS Code. Skipping copy."
+        fi
     else
         cp "$snippet_file" "$target_file"
         echo "✅ Copied snippet '$snippet_name' to VS Code."

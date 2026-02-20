@@ -23,21 +23,23 @@ The goal of this repo is:
 
 ## Repository Structure
 
-dotfiles/
-├─editor/
-│   ├── extensions.txt
-│   ├── setup-vscode.sh
-│   ├── setup-vscode-smart.sh
-│   ├── prettier.config.json
-│   ├── .eslintrc.json
-│   └── vscode/
-│       └── settings.json
-├── shell/
-│   └── zsh-related config files
+```
+├── README.md
+├── editor
+│   ├── extensions.txt
+│   ├── prettier.config.json
+│   ├── setup-vscode-smart.sh
+│   ├── setup-vscode.sh
+│   └── vscode
+│       ├── settings.json
+│       └── snippets
+│           └── typescriptreact.json
 ├── install.sh
-├── setup-new-mac.sh
 ├── new-project-setup.sh
-└── README.md
+├── setup-new-mac.sh
+└── shell
+    └── zsh-related config files
+```
 
 ---
 
@@ -105,7 +107,7 @@ These are symlinked or sourced during machine setup.
 
 ---
 
-## setup-new-mac.sh
+## `setup-new-mac.sh`
 
 **Purpose:** Prepare a brand-new Mac for development.
 
@@ -121,10 +123,10 @@ What it does:
 
 ```bash
 ./setup-new-mac.sh
-
+```
 ---
 
-## new-project-setup.sh
+## `new-project-setup.sh`
 
 **Purpose:** Create a brand-new personal project from scratch with my preferred defaults.
 

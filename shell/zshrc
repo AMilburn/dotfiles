@@ -1,0 +1,9 @@
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# fnm
+eval "$(fnm env)"
+
+# Aliases
+alias ll="ls -la"
+alias gs="git status -sb"

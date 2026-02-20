@@ -1,0 +1,17 @@
+# Prettier code formatting
+esbenp.prettier-vscode
+
+# Linting
+dbaeumer.vscode-eslint
+
+# Enhanced Git info
+eamodio.gitlens
+
+# Debug JS/TS in Chrome
+msjsdiag.debugger-for-chrome
+
+# Jest integration
+Orta.vscode-jest
+
+# Display package size
+wix.vscode-import-cost
